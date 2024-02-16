@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Student {
+class Student {
     public int n, tot;
     public float avg;
     public int[] s;
