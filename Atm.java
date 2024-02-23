@@ -12,12 +12,12 @@ class BankAccount {
     }
 
     public void deposit(double amount) {
-        balance += amount;
+        balance = balance+amount;
     }
 
     public boolean withdraw(double amount) {
         if (amount <= balance) {
-            balance -= amount;
+            balance = balance-amount;
             return true;
         }
         return false;
@@ -53,25 +53,23 @@ class ATM {
                     break;
                 case 2:
                     System.out.print("Enter amount to deposit: ");
-                    double depositAmount = scanner.nextDouble();
-                    account.deposit(depositAmount);
+                    double deposit = scanner.nextDouble();
+                    account.deposit(deposit);
                     System.out.println("Deposit successful. Your balance: Rs. " + account.getBalance());
                     break;
                 case 3:
                     System.out.print("Enter amount to withdraw: ");
-                    double withdrawAmount = scanner.nextDouble();
-                    if (account.withdraw(withdrawAmount)) {
+                    double withdraw = scanner.nextDouble();
+                    if (account.withdraw(withdraw)) {
                         System.out.println("Withdrawal successful. Your balance: Rs. " + account.getBalance());
                     } else {
                         System.out.println("Insufficient balance.");
                     }
                     break;
                 case 4:
-                    System.out.println("Thank you for using the ATM!");
-                    scanner.close();
                     return;
                 default:
-                    System.out.println("Invalid option. Please select a valid option.");
+                    System.out.println("Invalid option");
             }
         }
     }
@@ -79,7 +77,7 @@ class ATM {
 
 public class Main {
     public static void main(String[] args) {
-        BankAccount userAccount = new BankAccount(1000); // Initial balance
+        BankAccount userAccount = new BankAccount(1000);
         ATM atm = new ATM(userAccount);
         atm.run();
     }
