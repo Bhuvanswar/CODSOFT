@@ -5,7 +5,7 @@ class Student {
     public float avg;
     public int[] s;
     String grade;
-
+    
     public Student() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of subjects: ");
