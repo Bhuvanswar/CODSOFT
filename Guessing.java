@@ -39,6 +39,6 @@ public class Guessing {
         }
 
         System.out.println("Game over! Your score: " + score);
-
+        sc.close();
         }
 }
