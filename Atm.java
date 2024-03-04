@@ -40,26 +40,25 @@ class ATM {
     }
 
     public void run() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         while (true) {
             displayMenu();
             System.out.print("Select an option: ");
-            int choice = scanner.nextInt();
-
+            int choice = sc.nextInt();
             switch (choice) {
                 case 1:
                     System.out.println("Your balance: Rs. " + account.getBalance());
                     break;
                 case 2:
                     System.out.print("Enter amount to deposit: ");
-                    double deposit = scanner.nextDouble();
+                    double deposit = sc.nextDouble();
                     account.deposit(deposit);
                     System.out.println("Deposit successful. Your balance: Rs. " + account.getBalance());
                     break;
                 case 3:
                     System.out.print("Enter amount to withdraw: ");
-                    double withdraw = scanner.nextDouble();
+                    double withdraw = sc.nextDouble();
                     if (account.withdraw(withdraw)) {
                         System.out.println("Withdrawal successful. Your balance: Rs. " + account.getBalance());
                     } else {
@@ -75,7 +74,7 @@ class ATM {
     }
 }
 
-public class Main {
+public class AtmM {
     public static void main(String[] args) {
         BankAccount userAccount = new BankAccount(1000);
         ATM atm = new ATM(userAccount);
