@@ -16,6 +16,7 @@ class Student {
             System.out.print("Enter " + (i + 1) + "th marks: ");
             s[i] = sc.nextInt();
         }
+        sc.close();
     }
 
     public void calculate() {
@@ -62,5 +63,6 @@ class Student {
         String Again = sc.nextLine();
         again = Again.equalsIgnoreCase("yes");
       }
+      sc.close();
     }
 }
